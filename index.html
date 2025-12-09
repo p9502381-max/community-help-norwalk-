@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Community Help — Norwalk, CT</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+  <meta name="description" content="Search food banks, shelters, clinics and other help resources in Norwalk, CT.">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <h1>Community Help — Norwalk, CT</h1>
+      <p class="lede">Search local food banks, shelters, clinics and social services. Add a resource: <a href="submit.html">Submit a resource</a>.</p>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="card controls" aria-labelledby="searchHeading">
+      <div>
+        <label for="q">Search</label>
+        <input id="q" placeholder="Name, service, address..." />
+      </div>
+      <div>
+        <label for="city">City / ZIP</label>
+        <input id="city" placeholder="Norwalk or ZIP (optional)" />
+      </div>
+      <div>
+        <label for="type">Type</label>
+        <select id="type">
+          <option value="">All types</option>
+          <option>Food Bank / Pantry</option>
+          <option>Soup Kitchen</option>
+          <option>Emergency Shelter</option>
+          <option>Clothing / Supplies</option>
+          <option>Legal / Benefits Help</option>
+          <option>Healthcare / Clinic</option>
+        </select>
+      </div>
+      <div class="controls-actions">
+        <button id="locBtn" class="btn">Find near me</button>
+        <button id="exportBtn" class="btn btn-ghost">Export CSV</button>
+      </div>
+    </section>
+
+    <section class="layout">
+      <div class="column column-left">
+        <div class="card">
+          <h2 id="searchHeading">Results <span id="count" class="badge">0</span></h2>
+          <div id="list" class="list"></div>
+          <div id="emptyState" class="empty" style="display:none">No results. Try adjusting filters.</div>
+        </div>
+      </div>
+
+      <aside class="column column-right">
+        <div class="card">
+          <h2>Map</h2>
+          <div id="map"></div>
+          <p class="muted small">Map data © OpenStreetMap contributors</p>
+        </div>
+        <div class="card small">
+          <h3>Need to add this to GitHub?</h3>
+          <ol>
+            <li>Create a repo on GitHub (public)</li>
+            <li>Upload these files</li>
+            <li>Settings → Pages → Deploy from branch → main / (root)</li>
+          </ol>
+        </div>
+      </aside>
+    </section>
+
+    <section class="card small">
+      <h3>Notes for maintainers</h3>
+      <ul>
+        <li>To add resources, edit <code>resources.json</code>.</li>
+        <li>Verify hours & contacts regularly — community resources change often.</li>
+        <li>Keep personal data minimal (no SSNs, etc.).</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <small>Built for Norwalk communities • Host on GitHub Pages • Replace the Google Form link in <code>submit.html</code>.</small>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
